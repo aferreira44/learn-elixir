@@ -158,6 +158,13 @@ defmodule M do
         IO.puts "Capital of Arizona is #{capitals2.arizona}"
 
         capitals3 = Dict.put_new(capitals, "Arkansas", "Little Rock")
+
+        [length, width] = [20, 30]
+
+        IO.puts "Width: #{width}"
+
+        [_, [_, a]] = [20, [30, 40]]
+        IO.puts "Get num: : #{a}"
     end
 
     def display_list([word|words]) do
