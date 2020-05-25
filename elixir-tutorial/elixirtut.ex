@@ -183,6 +183,16 @@ defmodule M do
         add_sum.({1, 2, 3})
 
         IO.puts do_it()
+
+        IO.puts "Factorial of 4 : #{factorial 4}"
+    end
+
+    def factorial num do
+        if num <= 1 do
+            1
+        else
+            num * factorial num - 1
+        end
     end
 
     def display_list([word|words]) do
