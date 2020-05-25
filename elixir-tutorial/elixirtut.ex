@@ -189,6 +189,21 @@ defmodule M do
         IO.puts "Sum : #{sum([1, 2, 3])}"
 
         loop(5,1)
+
+        IO.puts "Even List : #{Enum.all?([1,2,3],
+        fn n -> rem(n, 2) == 0 end)}"
+
+        IO.puts "Any Even List : #{Enum.any?([1,2,3],
+        fn n -> rem(n, 2) == 0 end)}"
+
+        Enum.each([1,2,3], fn(n) -> IO.puts n end)
+
+        dbl_list = Enum.map([1,2,3], fn(n) -> n * 2 end)
+
+        sum_vals = Enum.reduce([1, 2, 3], fn(n , sum) -> n + sum end)
+        IO.puts "Sum : #{sum_vals}"
+
+        IO.inspect Enum.uniq([1, 2, 2])
     end
 
     def sum([]), do: 0
