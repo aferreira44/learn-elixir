@@ -144,8 +144,22 @@ defmodule M do
         IO.puts List.last words
 
         my_stats = [name: "Derek", height: 6.25]
+
+        capitals = %{
+            "Alabama" => "Montgomery",
+            "Alaska" => "Juneau",
+            "Arizona" => "Phoenix"
+        }
+
+        IO.puts "Capital of Alaska is #{capitals["Alaska"]}"
+
+        capitals2 = %{alabama: "Montgomery", alaska: "Juneau", arizona: "Phoenix"}
+
+        IO.puts "Capital of Arizona is #{capitals2.arizona}"
+
+        capitals3 = Dict.put_new(capitals, "Arkansas", "Little Rock")
     end
-    
+
     def display_list([word|words]) do
         IO.puts word
         display_list(words)
