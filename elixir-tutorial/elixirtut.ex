@@ -218,6 +218,20 @@ defmodule M do
         end
 
         IO.puts err
+
+        spawn(fn() -> loop(50, 1) end)
+        spawn(fn() -> loop(100, 50) end)
+
+        send(self(), {:french, "Bob"})
+
+        receive do
+            {:german, name} -> IO.puts "Guten tag #{name}"
+            {:french, name} -> IO.puts "Bonjour #{name}"
+            {:english, name} -> IO.puts "Hello #{name}"
+
+        after
+            500 -> IO.puts "Time up"
+        end
     end
 
     def sum([]), do: 0
