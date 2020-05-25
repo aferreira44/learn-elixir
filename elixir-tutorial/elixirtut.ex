@@ -204,6 +204,12 @@ defmodule M do
         IO.puts "Sum : #{sum_vals}"
 
         IO.inspect Enum.uniq([1, 2, 2])
+
+        dbl_list = for n <- [1, 2, 3], do: n * 2
+        IO.inspect dbl_list
+
+        even_list = for n <- [1, 2, 3, 4], rem(n,2) == 0, do: n
+        IO.inspect even_list
     end
 
     def sum([]), do: 0
